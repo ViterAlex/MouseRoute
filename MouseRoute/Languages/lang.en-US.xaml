@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:MouseRoute">
+    <!--Controls-->
+    <system:String x:Key="mainWindowTitle">Mouse route</system:String>
+    <system:String x:Key="statisticButtonTitle">Statistics</system:String>
+    <system:String x:Key="settingsExpanderTitle">Settings</system:String>
+    <system:String x:Key="runWithWindowsCheckBoxTitle">Autorun</system:String>
+    <system:String x:Key="autorunCheckBoxTitle">Autostart</system:String>
+    <system:String x:Key="statisticsWindowTitle">Statistics</system:String>
+    <system:String x:Key="startTimeColumnHeader">Start time</system:String>
+    <system:String x:Key="durationColumnHeader">Duration</system:String>
+    <system:String x:Key="leftClicksColumnHeader">Left clicks</system:String>
+    <system:String x:Key="middleClicksColumnHeader">Middle clicks</system:String>
+    <system:String x:Key="rightClicksColumnHeader">Right clicks</system:String>
+    <system:String x:Key="routeColumnHeader">Route</system:String>
+    <!--Tooltips for controls-->
+    <system:String x:Key="leftClicksLabelTooltip">Left button clicks count</system:String>
+    <system:String x:Key="rightClicksLabelTooltip">Right button clicks count</system:String>
+    <system:String x:Key="middleClicksLabelTooltip">Middle button clicks count</system:String>
+    <system:String x:Key="routeLabelTooltip">Route length</system:String>
+    <system:String x:Key="statisticsButtonTooltip">Show statistics window</system:String>
+    <system:String x:Key="autoRunCheckboxTooltip">Run with Windows</system:String>
+    <system:String x:Key="autostartCheckboxTooltip">Start count at program launch</system:String>
+</ResourceDictionary>

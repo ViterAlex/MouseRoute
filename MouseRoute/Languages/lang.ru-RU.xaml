@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:MouseRoute">
+    <system:String x:Key="mainWindowTitle">Пробег мыши</system:String>
+    <system:String x:Key="statisticButtonTitle">Статистика</system:String>
+    <system:String x:Key="settingsExpanderTitle">Настройки</system:String>
+    <system:String x:Key="runWithWindowsCheckBoxTitle">Автозапуск</system:String>
+    <system:String x:Key="autorunCheckBoxTitle">Автостарт</system:String>
+    <system:String x:Key="statisticsWindowTitle">Статистика</system:String>
+    <system:String x:Key="startTimeColumnHeader">Начало</system:String>
+    <system:String x:Key="durationColumnHeader">Время работы</system:String>
+    <system:String x:Key="leftClicksColumnHeader">ЛКМ</system:String>
+    <system:String x:Key="middleClicksColumnHeader">СКМ</system:String>
+    <system:String x:Key="rightClicksColumnHeader">ПКМ</system:String>
+    <system:String x:Key="routeColumnHeader">Пробег</system:String>
+    <!--Tooltips for controls-->
+    <system:String x:Key="leftClicksLabelTooltip">Количество кликов ЛКМ</system:String>
+    <system:String x:Key="rightClicksLabelTooltip">Количество кликов ПКМ</system:String>
+    <system:String x:Key="middleClicksLabelTooltip">Количество кликов СКМ</system:String>
+    <system:String x:Key="routeLabelTooltip">Общий пробег</system:String>
+    <system:String x:Key="statisticsButtonTooltip">Показать статистику</system:String>
+    <system:String x:Key="autoRunCheckboxTooltip">Запускать с Windows</system:String>
+    <system:String x:Key="autostartCheckboxTooltip">Начинать отсчёт при запуске программы</system:String>
+</ResourceDictionary>

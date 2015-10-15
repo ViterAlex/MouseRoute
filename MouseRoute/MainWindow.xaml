@@ -1,0 +1,111 @@
+﻿<Window x:Class="MouseRoute.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        Height="194"
+        Width="181"
+        Title="{DynamicResource mainWindowTitle}"
+        DataContext="{Binding Main, Source={StaticResource Locator}}"
+        SizeToContent="Height"
+        ResizeMode="CanMinimize"
+        Background="{DynamicResource BackgroundBrush}"
+        Foreground="{DynamicResource TextBrush}">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="LanguagesComboBoxItemTemplate">
+                <StackPanel Background="{DynamicResource BackgroundBrush}">
+                    <TextBlock Height="Auto"
+                               TextWrapping="Wrap"
+                               Text="{Binding NativeName, Mode=OneWay}"
+                               Width="Auto"
+                               HorizontalAlignment="Left"
+                               Foreground="{DynamicResource TextBrush}" />
+                </StackPanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo>
+            <TaskbarItemInfo.ThumbButtonInfos>
+                <ThumbButtonInfo Command="{Binding OnOffCommand, Mode=OneWay}" />
+            </TaskbarItemInfo.ThumbButtonInfos>
+        </TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
+
+    <StackPanel>
+        <StackPanel x:Name="InfoPanel">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33.33*" />
+                    <ColumnDefinition Width="33.33*" />
+                    <ColumnDefinition Width="33.33*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="{Binding TotalLeftClicks, Mode=OneWay}"
+                           Grid.Column="0"
+                           ToolTip="{DynamicResource leftClicksLabelTooltip}"
+                           FontFamily="{DynamicResource CommonDigitsFont}" />
+                <TextBlock Text="{Binding TotalMiddleClicks, Mode=OneWay}"
+                           Grid.Column="1"
+                           ToolTip="{DynamicResource middleClicksLabelTooltip}" />
+                <TextBlock Text="{Binding TotalRightClicks, Mode=OneWay}"
+                           Grid.Column="2"
+                           ToolTip="{DynamicResource rightClicksLabelTooltip}" />
+            </Grid>
+            <TextBlock Text="{Binding TotalRoute, Mode=OneWay, StringFormat=f2}"
+                       ToolTip="{DynamicResource routeLabelTooltip}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="{DynamicResource statisticButtonTitle}"
+                    Command="{Binding ShowStaticticsCommand, Mode=OneWay}"
+                    FontFamily="{DynamicResource CommonTextFont}"
+                    ToolTip="{DynamicResource statisticsButtonTooltip}"
+                    Background="{DynamicResource BackgroundBrush}">
+                <Button.Foreground>
+                    <SolidColorBrush Color="{DynamicResource MainForegroundColor}" />
+                </Button.Foreground>
+            </Button>
+            <ToggleButton Command="{Binding OnOffCommand, Mode=OneWay}"
+                          IsChecked="{Binding IsHooked, Mode=OneWay}"
+                          Cursor="Hand" />
+        </StackPanel>
+        <Expander Header="{DynamicResource settingsExpanderTitle}"
+                  DataContext="{Binding Settings, Source={StaticResource Locator}}"
+                  FontFamily="{DynamicResource CommonTextFont}"
+                  Cursor="Hand">
+            <Expander.Foreground>
+                <SolidColorBrush Color="{DynamicResource MainForegroundColor}" />
+            </Expander.Foreground>
+            <StackPanel>
+                <ComboBox ItemTemplate="{DynamicResource LanguagesComboBoxItemTemplate}"
+                          ItemsSource="{Binding Languages}"
+                          SelectedValue="{Binding SelectedLanguage}"
+                          HorizontalAlignment="Left"
+                          FontFamily="{DynamicResource CommonTextFont}"
+                          Background="{DynamicResource BackgroundBrush}">
+                </ComboBox>
+                <CheckBox Content="{DynamicResource runWithWindowsCheckBoxTitle}"
+                          IsChecked="{Binding Autorun}"
+                          ToolTip="{DynamicResource autoRunCheckboxTooltip}">
+                    <CheckBox.Foreground>
+                        <SolidColorBrush Color="{DynamicResource MainForegroundColor}" />
+                    </CheckBox.Foreground>
+                </CheckBox>
+                <CheckBox Content="{DynamicResource autorunCheckBoxTitle}"
+                          IsChecked="{Binding Autostart}"
+                          ToolTip="{DynamicResource autostartCheckboxTooltip}">
+                    <CheckBox.Foreground>
+                        <SolidColorBrush Color="{DynamicResource MainForegroundColor}" />
+                    </CheckBox.Foreground>
+                </CheckBox>
+            </StackPanel>
+        </Expander>
+    </StackPanel>
+</Window>
